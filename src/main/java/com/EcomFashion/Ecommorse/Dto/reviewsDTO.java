@@ -4,18 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class reviewsDTO {
 
     private Long id;
 
-    private String name;
+    private Long userId;
 
-    private String description;
+    private Long productId;
 
-    private BigDecimal basePrice;
+    private Integer rating;
+
+    private String reviewText;
 }

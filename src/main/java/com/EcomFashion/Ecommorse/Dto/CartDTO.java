@@ -7,13 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Inventory {
+public class CartDTO {
 
     private Long id;
 
-    private Long productVariantId;
-
-    private Integer quantityChanged;
-
-    private String eventType;
+    private Long userId;
 }
