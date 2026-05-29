@@ -1,5 +1,6 @@
 package com.EcomFashion.Ecommorse.Dto;
 
+import com.EcomFashion.Ecommorse.Entity.Enum.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +16,5 @@ public class CustomerDTO {
 
     private String email;
 
-    private String role;
+    private Role role;
 }

@@ -1,6 +1,6 @@
-package com.EcomFashion.Ecommorse.Repositories;
+package com.EcomFashion.Ecommorse.Repositories.Cart;
 
-import com.EcomFashion.Ecommorse.Entity.CartItem;
+import CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

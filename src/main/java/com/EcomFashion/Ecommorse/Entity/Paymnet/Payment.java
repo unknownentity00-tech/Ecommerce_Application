@@ -1,6 +1,7 @@
-package com.EcomFashion.Ecommorse.Entity;
+package com.EcomFashion.Ecommorse.Entity.Paymnet;
 
 
+import com.EcomFashion.Ecommorse.Entity.Order.Order;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,27 +13,23 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "payments")
+public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "seller_id")
-    private User seller;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
 
-    @Column(nullable = false)
-    private String name;
+    private String transactionId;
 
-    @Column(columnDefinition = "TEXT")
-    private String description;
+    private BigDecimal amount;
 
-    @Column(nullable = false)
-    private BigDecimal basePrice;
+    private String status;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-
 }

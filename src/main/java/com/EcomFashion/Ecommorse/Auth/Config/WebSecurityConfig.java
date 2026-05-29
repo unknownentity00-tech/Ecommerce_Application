@@ -38,9 +38,6 @@ public class WebSecurityConfig {
         return httpSecurity.build();
     }
 
-
-
-
     @Bean
     public AuthenticationManager authenticationManager(
             AuthenticationConfiguration config) throws Exception {
@@ -51,6 +48,5 @@ public class WebSecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
 }

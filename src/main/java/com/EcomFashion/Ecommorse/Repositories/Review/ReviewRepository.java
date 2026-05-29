@@ -1,6 +1,6 @@
-package com.EcomFashion.Ecommorse.Repositories;
+package com.EcomFashion.Ecommorse.Repositories.Review;
 
-import com.EcomFashion.Ecommorse.Entity.Review;
+import com.EcomFashion.Ecommorse.Entity.Review.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

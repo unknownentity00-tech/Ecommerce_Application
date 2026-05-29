@@ -1,5 +1,6 @@
 package com.EcomFashion.Ecommorse.Auth.Dto;
 
+import com.EcomFashion.Ecommorse.Entity.Enum.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,6 @@ public class AuthResponseDTO {
     private String tokenType;
     private Long userId;
     private String email;
-    private String role;
+    private Role role;
     private Long expiresIn;
 }

@@ -1,5 +1,6 @@
-package com.EcomFashion.Ecommorse.Entity;
+package com.EcomFashion.Ecommorse.Entity.Cart;
 
+import com.EcomFashion.Ecommorse.Entity.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

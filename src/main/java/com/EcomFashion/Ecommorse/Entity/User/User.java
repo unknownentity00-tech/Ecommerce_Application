@@ -1,6 +1,7 @@
-package com.EcomFashion.Ecommorse.Entity;
+package com.EcomFashion.Ecommorse.Entity.User;
 
 
+import com.EcomFashion.Ecommorse.Entity.Enum.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,8 @@ public class User {
     private String passwordHash;
 
     @Column(nullable = false)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

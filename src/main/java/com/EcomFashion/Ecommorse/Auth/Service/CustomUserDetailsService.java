@@ -1,7 +1,7 @@
 package com.EcomFashion.Ecommorse.Auth.Service;
 
-import com.EcomFashion.Ecommorse.Entity.User;
-import com.EcomFashion.Ecommorse.Repositories.UserRepository;
+import com.EcomFashion.Ecommorse.Entity.User.User;
+import com.EcomFashion.Ecommorse.Repositories.User.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,7 +34,7 @@ public class CustomUserDetailsService
                 user.getPasswordHash(),
                 List.of(
                         new SimpleGrantedAuthority(
-                                "ROLE_" + user.getRole()
+                                "ROLE_" + user.getRole().name()
                         )
                 )
         );

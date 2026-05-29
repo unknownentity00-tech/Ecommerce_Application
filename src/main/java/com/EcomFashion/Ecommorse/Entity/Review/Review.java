@@ -1,5 +1,7 @@
-package com.EcomFashion.Ecommorse.Entity;
+package com.EcomFashion.Ecommorse.Entity.Review;
 
+import com.EcomFashion.Ecommorse.Entity.Product.Product;
+import com.EcomFashion.Ecommorse.Entity.User.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

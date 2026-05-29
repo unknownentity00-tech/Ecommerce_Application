@@ -1,5 +1,5 @@
 package com.EcomFashion.Ecommorse.Auth.Service;
-import com.EcomFashion.Ecommorse.Entity.User;
+import com.EcomFashion.Ecommorse.Entity.User.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -13,7 +13,6 @@ import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 
@@ -22,22 +21,15 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class JwtService {
 
-
-
         @Value("${jwt.secret-key}")
         private String secretKey;
-
        @Value("${jwt.access-token-expiration}")
         private long accessTokenExpiration;
-
        @Value("${jwt.refresh-token-expiration}")
        private long refreshTokenExpiration;
-
        @Value("${jwt.issuer}")
-        private String issuer;
-
+       private String issuer;
        private SecretKey key;
-
 
       @PostConstruct
       public void init() {
@@ -53,18 +45,14 @@ public class JwtService {
         );
     }
 
-
-
     public String generateRefreshToken(User user) {
-        return buildToken(
-                user,
+        return buildToken(user,
                 refreshTokenExpiration,
                 "REFRESH"
         );
     }
 
-    private String buildToken(
-            User user,
+    private String buildToken(User user,
             long expiration,
             String tokenType
     ) {
@@ -110,14 +98,12 @@ public class JwtService {
         );
     }
 
-
     public String extractEmail(String token) {
         return extractClaim(
                 token,
                 claims -> claims.get("email", String.class)
         );
     }
-
 
     public String extractRole(String token) {
         return extractClaim(
@@ -153,7 +139,6 @@ public class JwtService {
                 .getBody();
     }
 
-
     public boolean isTokenExpired(String token) {
 
         Date expiration = extractClaim(
@@ -177,4 +162,5 @@ public class JwtService {
             );
         }
 
-    }}
+    }
+}

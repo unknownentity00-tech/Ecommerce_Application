@@ -1,4 +1,4 @@
-package com.EcomFashion.Ecommorse;
+package com.EcomFashion.Ecommorse.Config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,6 @@ public class AppConfig {
 
     @Bean
     public RestTemplate restTemplate() {
-
         return new RestTemplate();
     }
 }

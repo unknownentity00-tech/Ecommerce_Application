@@ -21,24 +21,15 @@ public class CaptchaService {
     public boolean verifyCaptcha(
             String captchaToken
     ) {
-
         String url =
                 "https://www.google.com/recaptcha/api/siteverify";
-
-        MultiValueMap<String, String> body =
-                new LinkedMultiValueMap<>();
-
+        MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
         body.add("secret", recaptchaSecret);
-
         body.add("response", captchaToken);
-
-        RecaptchaResponse response =
-                restTemplate.postForObject(
-                        url,
-                        body,
-                        RecaptchaResponse.class
+        RecaptchaResponse response = restTemplate.postForObject(url,
+                body,
+                RecaptchaResponse.class
                 );
-
         return response != null
                 && response.isSuccess();
     }
